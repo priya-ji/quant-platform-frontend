@@ -149,6 +149,37 @@
   ::-webkit-scrollbar{width:9px;height:9px}
   ::-webkit-scrollbar-thumb{background:#222a39;border-radius:6px}
   ::-webkit-scrollbar-track{background:transparent}
+
+  /* Responsive research workspace */
+  :root{--ink-faint:#8692a8;--panel:#111824;--panel-2:#172131;--line:#273348}
+  #app{height:100dvh} .topbar{height:auto;min-height:72px;flex-wrap:wrap;gap:14px;padding:16px 24px}
+  .brand{font-size:16px;white-space:nowrap}.status-strip{gap:24px}.stat{gap:5px}.stat .v{font-size:13px}
+  .body{min-height:0}.rail{width:330px;overflow-y:auto}.rail-head{padding:20px;position:sticky;top:0;background:var(--panel);z-index:2;font-size:16px}
+  .rail-head small{line-height:1.6;margin-top:4px}.chat{flex:1 0 180px;min-height:180px;padding:16px;max-height:40vh}
+  .composer{padding:16px;gap:14px;flex:none}.composer textarea{min-height:94px;line-height:1.6;padding:12px}
+  .composer small{font-size:11px;line-height:1.6;color:var(--ink-dim)}
+  .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field-grid label{display:flex;flex-direction:column;gap:7px;font-size:11px;color:var(--ink-dim)}
+  .field-grid label:first-child{grid-column:1/-1}
+  select,input[type=date],input[type=text]{color-scheme:dark;background:#0d1420;border:1px solid var(--line);border-radius:8px;color:var(--ink);font:12px var(--sans);padding:10px;width:100%;min-width:0}
+  input[type=checkbox]{accent-color:var(--accent);width:15px;height:15px;margin:0}.toggle{display:flex;gap:9px;align-items:center;font-size:12px}
+  button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .prompts{gap:8px}.prompts button{padding:8px 10px;text-align:left;line-height:1.4;flex:1 1 130px}
+  .tabs{overflow-x:auto;gap:8px;padding:0 20px}.tab{white-space:nowrap;cursor:pointer;background:none;border:0;border-bottom:2px solid transparent;padding:17px 10px}.tabs .spacer{display:none}
+  .strategy-label{max-width:190px;overflow:hidden;text-overflow:ellipsis;margin-left:auto}
+  .content{padding:28px;max-width:1600px;width:100%;margin:auto}.panel{padding:22px;border-radius:14px}.panel h3{font-size:15px;flex-wrap:wrap}
+  .workspace-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:24px}.workspace-head h1{font:600 29px var(--disp);letter-spacing:-.7px;margin:6px 0 10px}.workspace-head p{color:var(--ink-dim);line-height:1.7;margin:0;max-width:620px}
+  .eyebrow{font:10px var(--mono);letter-spacing:1.6px;color:var(--accent);text-transform:uppercase}
+  .feed-status{border:1px solid var(--line);padding:10px 14px;border-radius:9px;white-space:nowrap;color:var(--ink-dim);font-size:11px}
+  .quote-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:20px}.quote-card{padding:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;text-align:left;color:var(--ink)}
+  .quote-card.active{border-color:var(--accent);background:#12272d}.quote-card strong{font:500 12px var(--mono)}.quote-price{font:500 24px var(--mono);margin:14px 0 8px}.quote-card small{color:var(--ink-dim);font-size:10px}
+  .overview-grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(240px,1fr);gap:18px}.chart-empty{min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border:1px dashed var(--line);border-radius:10px;padding:24px;background:linear-gradient(180deg,#111f2b,#111824)}
+  .chart-empty strong{font:500 18px var(--disp);margin-bottom:10px}.chart-empty p{max-width:380px;color:var(--ink-dim);line-height:1.7;margin:0}
+  .setup-step{display:flex;gap:12px;margin:20px 0}.step-number{width:26px;height:26px;flex:none;border:1px solid var(--line);border-radius:8px;display:grid;place-items:center;color:var(--accent);font:12px var(--mono)}.setup-step strong{font-size:12px}.setup-step p{font-size:11px;line-height:1.7;color:var(--ink-dim);margin:5px 0 0;overflow-wrap:anywhere}
+  .context-note{padding:12px 16px;margin-bottom:20px;border:1px solid #314558;border-radius:9px;background:#14202d;color:var(--ink-dim);font-size:12px;line-height:1.7}
+  .watchlist-form{display:flex;gap:8px;align-items:center;margin-bottom:18px}.watchlist-form input{max-width:330px}.muted{color:var(--ink-dim);font-size:11px;line-height:1.7}.legend{flex-wrap:wrap}.empty{padding:48px 24px;color:var(--ink-dim)}.kill{margin-left:auto;padding:8px 10px;font-size:10px}.panel{overflow:auto}
+  @media(max-width:1200px){.status-strip{order:3;width:100%;margin:0;justify-content:space-between}.overview-grid{grid-template-columns:1fr}.topbar>.pill{display:none}.rail{width:300px}.content{padding:20px}.workspace-head h1{font-size:25px}}
+  @media(max-width:760px){body{overflow:auto}#app{height:auto;min-height:100dvh}.body{flex-direction:column}.main{order:0}.rail{order:1;width:100%;border-right:0;border-top:1px solid var(--line)}.chat{max-height:240px}.content{overflow:visible;padding:16px}.topbar{padding:15px;gap:10px}.status-strip{gap:12px;flex-wrap:wrap}.stat .k{font-size:9px}.stat .v{font-size:11px}.tabs{padding:0 8px}.workspace-head{flex-direction:column;gap:12px}.quote-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.quote-price{font-size:21px}.panel{padding:16px}.strategy-label{display:none}.rail-head{position:static}}
+
 </style>
 </head>
 <body>
@@ -234,9 +265,15 @@ function Metrics({m}){
 /* ======================================================================= */
 function App(){
   const [useLLM,setUseLLM]=useState(false);
-  const [dataSource,setDataSource]=useState('sample');
-  const [start,setStart]=useState('2020-06-01');
-  const [end,setEnd]=useState('2024-12-31');
+  const [dataSource,setDataSource]=useState('alpaca');
+  const recentEnd=()=>{const d=new Date();d.setUTCDate(d.getUTCDate()-1);return d.toISOString().slice(0,10);};
+  const recentStart=()=>{const d=new Date();d.setUTCFullYear(d.getUTCFullYear()-2);return d.toISOString().slice(0,10);};
+  const [start,setStart]=useState(recentStart);
+  const [end,setEnd]=useState(recentEnd);
+  const [market,setMarket]=useState(null);
+  const [marketError,setMarketError]=useState('');
+  const [symbols,setSymbols]=useState('AAPL,MSFT,SPY');
+  const [refreshKey,setRefreshKey]=useState(0);
   const [health,setHealth]=useState(null);
   const [mon,setMon]=useState(null);
   const [pred,setPred]=useState(null);
@@ -249,21 +286,31 @@ function App(){
   const [strategies,setStrategies]=useState([]);
   const [backtest,setBacktest]=useState(null);
   const [validation,setValidation]=useState(null);
-  const [tab,setTab]=useState('backtest');
+  const [tab,setTab]=useState('market');
   const [toast,setToast]=useState(null);
   const chatRef=useRef();
 
   const notify=(msg,err)=>{setToast({msg,err});setTimeout(()=>setToast(null),3200);};
 
-  // poll health + monitoring + predictive
+  // Finish each request before scheduling another; never show demo holdings in live mode.
   useEffect(()=>{
-    let alive=true;
-    const tick=async()=>{
-      try{ const [h,mo,pr]=await Promise.all([api('/api/health'),api('/api/monitoring'),api('/api/predictive')]);
-        if(alive){setHealth(h);setMon(mo);setPred(pr);} }catch(e){ if(alive)setHealth({status:'down',err:e.message}); }
-    };
-    tick(); const id=setInterval(tick,2500); return ()=>{alive=false;clearInterval(id);};
-  },[]);
+    let alive=true,timer;
+    setMon(null);setPred(null);setMarket(null);setMarketError('');
+    async function tick(){
+      try{
+        if(dataSource==='sample'){
+          const [h,mo,pr]=await Promise.all([api('/api/health'),api('/api/monitoring'),api('/api/predictive')]);
+          if(alive){setHealth(h);setMon(mo);setPred(pr);}
+        }else{
+          const [h,quotes]=await Promise.all([api('/api/health'),api('/api/market/latest?symbols='+encodeURIComponent(symbols))]);
+          if(alive){setHealth(h);setMarket(quotes);setMarketError('');}
+          if(quotes.status==='not_configured')return;
+        }
+      }catch(e){if(alive){setMarketError(e.message);setHealth({status:'down'});}}
+      if(alive)timer=setTimeout(tick,dataSource==='sample'?10000:15000);
+    }
+    tick();return ()=>{alive=false;clearTimeout(timer);};
+  },[dataSource,symbols,refreshKey]);
   useEffect(()=>{ if(chatRef.current) chatRef.current.scrollTop=chatRef.current.scrollHeight; },[messages]);
   const refreshList=useCallback(()=>api('/api/strategies').then(d=>setStrategies(d.strategies)).catch(()=>{}),[]);
   useEffect(()=>{refreshList();},[refreshList]);
@@ -309,19 +356,22 @@ function App(){
   }
 
   const p=mon?.portfolio; const hbProc=mon?.processes?.[0];
+  const latestTrade=market?.quotes?.map(q=>q.timestamp).sort().at(-1);
+  const isDemo=dataSource==='sample';
+  const researchUnavailable=!isDemo&&market?.status==='not_configured';
   return (
   <div id="app">
     <div className="topbar">
       <div className="brand"><span className="dot"></span>QUANT&nbsp;TERMINAL</div>
       <div className="status-strip">
-        <div className="stat"><span className="k">Market</span><span className="v">{mon?mon.as_of:'—'}</span></div>
-        <div className="stat"><span className="k">Equity</span><span className="v">{p?fmt(p.equity,0):'—'}</span></div>
+        <div className="stat"><span className="k">{isDemo?'Demo data as of':'Latest trade'}</span><span className="v">{isDemo?(mon?.as_of||'—'):(latestTrade?new Date(latestTrade).toLocaleTimeString():'Not connected')}</span></div>
+        <div className="stat"><span className="k">{isDemo?'Demo equity':'Account equity'}</span><span className="v">{p?fmt(p.equity,0):'—'}</span></div>
         <div className="stat"><span className="k">Total P&L</span><span className={'v '+signClass(p?.total_pnl)}>{p?fmt(p.total_pnl,0):'—'}</span></div>
-        <div className="stat"><span className="k">Day P&L</span><span className={'v '+signClass(p?.realized_pnl)}>{p?fmt(p.realized_pnl,0):'—'}</span></div>
+        <div className="stat"><span className="k">Realized P&L</span><span className={'v '+signClass(p?.realized_pnl)}>{p?fmt(p.realized_pnl,0):'—'}</span></div>
         <div className="stat"><span className="k">Positions</span><span className="v">{p?p.n_positions:'—'}</span></div>
       </div>
       <div className="spacer"></div>
-      <span className="pill"><span className={'led '+(mon?.broker_connected?'on':'off')}></span>broker</span>
+      <span className="pill"><span className={'led '+(mon?.broker_connected?'on':'off')}></span>{isDemo?'Demo broker':'Account not connected'}</span>
       <span className="pill"><span className={'led '+(hbProc?.healthy?'on':'off')}></span>heartbeat {hbProc?hbProc.heartbeat_age_s+'s':'—'}</span>
       <span className="pill"><span className={'led '+(mon?.live_enabled?'live':'off')}></span>live {mon?.live_enabled?'ARMED':'off'}</span>
       <button className="kill" onClick={kill}>■ Kill all live</button>
@@ -343,22 +393,20 @@ function App(){
           {busy && <div className="msg bot dim">working…</div>}
         </div>
         <div className="composer">
-          <label><input type="checkbox" checked={useLLM} onChange={e=>setUseLLM(e.target.checked)}/> Use Claude to interpret strategy</label>
-          <div className="row" style={{margin:'10px 0',flexWrap:'wrap'}}>
-            <label>Data <select value={dataSource} disabled={busy} onChange={e=>{setDataSource(e.target.value);setBacktest(null);setValidation(null);}}>
+          <label className="toggle"><input type="checkbox" checked={useLLM} onChange={e=>setUseLLM(e.target.checked)}/> Use Claude to interpret strategy</label>
+          <div className="field-grid">
+            <label>Data <select value={dataSource} disabled={busy} onChange={e=>{setDataSource(e.target.value);setStart(e.target.value==='sample'?'2020-06-01':recentStart());setEnd(e.target.value==='sample'?'2024-12-31':recentEnd());setBacktest(null);setValidation(null);}}>
               <option value="sample">Synthetic sample</option><option value="alpaca">Alpaca US historical</option></select></label>
             <label>Start <input type="date" value={start} disabled={busy} onChange={e=>{setStart(e.target.value);setBacktest(null);setValidation(null);}}/></label>
             <label>End <input type="date" value={end} disabled={busy} onChange={e=>{setEnd(e.target.value);setBacktest(null);setValidation(null);}}/></label>
           </div>
-          <small>Validation and paper monitoring use synthetic sample data.</small>
+          <small>{isDemo?'Offline demo · synthetic prices and virtual funds.':'US stocks · Alpaca prices. Add provider credentials to enable market data and research.'}</small>
           {!strategy && <div className="prompts">
-            {['Six-month momentum on US large caps, top 5, monthly, vs SPY',
-              'Companies gaining market share faster than sector, improving margins, reasonable valuation, quarterly, vs SPY, top 8',
-              'Momentum on Indian large caps, top 6, vs NIFTYBEES'].map((q,i)=>
+            {(isDemo?['Six-month momentum on US large caps, top 5, monthly, vs SPY','Companies gaining market share faster than sector, improving margins, reasonable valuation, quarterly, vs SPY, top 8','Momentum on Indian large caps, top 6, vs NIFTYBEES']:['Six-month momentum on US large caps, top 5, monthly, vs SPY']).map((q,i)=>
               <button key={i} onClick={()=>send(q)}>{q.slice(0,42)}…</button>)}
           </div>}
           {strategy && <div className="prompts">
-            {['add sector growth','remove momentum','use quarterly rebalance','compare against QQQ','top 10'].map((q,i)=>
+            {(isDemo?['add sector growth','remove momentum','use quarterly rebalance','compare against QQQ','top 10']:['use quarterly rebalance','compare against QQQ','top 10']).map((q,i)=>
               <button key={i} onClick={()=>send(q)}>{q}</button>)}
           </div>}
           <textarea value={input} placeholder={strategy?'Modify the strategy conversationally…':'Describe a strategy…'}
@@ -366,8 +414,8 @@ function App(){
             onKeyDown={e=>{if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}}}/>
           <div className="row">
             <button className="btn primary" style={{flex:1}} disabled={busy} onClick={()=>send()}>Send</button>
-            <button className="btn" disabled={!strategy||busy} onClick={runBacktest}>Backtest</button>
-            <button className="btn" disabled={!strategy||busy||dataSource!=='sample'} onClick={runValidation}>Validate</button>
+            <button className="btn" disabled={!strategy||busy||researchUnavailable} onClick={runBacktest}>Backtest</button>
+            <button className="btn" disabled={!strategy||busy||researchUnavailable} onClick={runValidation}>Validate</button>
           </div>
         </div>
       </div>
@@ -375,20 +423,20 @@ function App(){
       {/* main */}
       <div className="main">
         <div className="tabs">
-          {[['backtest','Backtest'],['validation','Validation'],['monitor','Monitoring'],
-            ['market','Market data'],['predict','Predictive'],['risk','Risk & Audit']].map(([k,l])=>
-            <div key={k} className={'tab'+(tab===k?' active':'')} onClick={()=>setTab(k)}>{l}</div>)}
+          {[['market','Overview'],['backtest','Backtest'],['validation','Validation'],['monitor','Portfolio'],
+            ['predict','Risk forecast'],['risk','Risk & Audit']].map(([k,l])=>
+            <button key={k} className={'tab'+(tab===k?' active':'')} aria-current={tab===k?'page':undefined} onClick={()=>setTab(k)}>{l}</button>)}
           <div className="spacer"></div>
-          <div className="tab" style={{color:'var(--ink-faint)'}}>
+          <div className="tab strategy-label" style={{color:'var(--ink-faint)'}}>
             {strategy?`${strategy.spec.name} · v${strategy.version}`:'no strategy selected'}</div>
         </div>
         <div className="content">
-          {tab==='backtest' && <BacktestView bt={backtest} strategy={strategy} onRun={runBacktest} onPromote={promotePaper} busy={busy}/>}
-          {tab==='validation' && <ValidationView v={validation} onRun={runValidation} busy={busy||dataSource!=='sample'}/>}
-          {tab==='market' && <MarketView/>}
-          {tab==='monitor' && <MonitorView mon={mon}/>}
-          {tab==='predict' && <PredictView pred={pred}/>}
-          {tab==='risk' && <RiskView/>}
+          {tab==='backtest' && <BacktestView bt={backtest} strategy={strategy} onRun={runBacktest} onPromote={promotePaper} busy={busy||researchUnavailable}/>}
+          {tab==='validation' && <ValidationView v={validation} onRun={runValidation} busy={busy||!strategy||researchUnavailable}/>}
+          {tab==='market' && <MarketView snapshot={market} error={marketError} symbols={symbols} onSymbols={setSymbols} onRetry={()=>setRefreshKey(n=>n+1)} isDemo={isDemo} onResearch={()=>setTab('backtest')}/>}
+          {tab==='monitor' && (isDemo?<MonitorView mon={mon}/>:<AccountSetup/>)}
+          {tab==='predict' && (isDemo?<PredictView pred={pred}/>:<AccountSetup forecast/>)}
+          {tab==='risk' && <><div className="context-note">Risk limits below are configured policy values. Reconciliation refers to the local demo portfolio.</div><RiskView/></>}
         </div>
       </div>
     </div>
@@ -396,43 +444,52 @@ function App(){
   </div>);
 }
 
-function MarketView(){
-  const [snapshot,setSnapshot]=useState(null);
-  const [error,setError]=useState('');
+function AccountSetup({forecast=false}){
+  return <div className="panel"><span className="eyebrow">{forecast?'Portfolio risk':'Portfolio connection'}</span><h2>Connect a portfolio to see {forecast?'risk estimates':'account values'}</h2><p className="muted">Market prices alone do not provide your cash, holdings or P&amp;L. Choose a broker paper account or a simulated portfolio funded with virtual cash. No account is connected yet.</p><p className="context-note">Demo portfolio values are available only when you explicitly select Synthetic sample in the research panel.</p></div>;
+}
+function MarketView({snapshot,error,symbols,onSymbols,onRetry,isDemo,onResearch}){
+  const [draft,setDraft]=useState(symbols);
+  const [selected,setSelected]=useState(symbols.split(',')[0]);
   const [history,setHistory]=useState({});
-  const [retry,setRetry]=useState(0);
+  const [inputError,setInputError]=useState('');
+  useEffect(()=>{setHistory({});setSelected(symbols.split(',')[0]);},[symbols,isDemo]);
   useEffect(()=>{
-    let alive=true, timer;
-    async function refresh(){
-      try{
-        const data=await api('/api/market/latest?symbols=AAPL,MSFT,SPY');
-        if(alive){
-          setSnapshot(data);setError('');
-          if(data.status==='not_configured'){setHistory({});return;}
-          setHistory(previous=>{
-            const next={...previous};
-            data.quotes.forEach(q=>{const points={...(next[q.symbol]||{}),[q.timestamp]:q.price};next[q.symbol]=Object.fromEntries(Object.entries(points).sort(([a],[b])=>a.localeCompare(b)).slice(-120));});
-            return next;
-          });
-        }
-      }catch(e){if(alive)setError(e.message);}
-      if(alive)timer=setTimeout(refresh,15000);
-    }
-    refresh();return ()=>{alive=false;clearTimeout(timer);};
-  },[retry]);
-  return <div className="grid"><div className="panel"><h3>US market data · latest trades</h3>
-    {snapshot?.status==='not_configured' ? <div role="status"><h3>Live market data not configured</h3><p>{snapshot.message}</p><p>Automatic requests are paused. Synthetic backtests remain available.</p><button className="btn" onClick={()=>{setSnapshot(null);setRetry(n=>n+1);}}>Check connection again</button></div> : <p>Alpaca {snapshot?.feed||'configured feed'} · refreshed every 15 seconds. IEX covers one exchange. Chart collects prices while this tab is open.</p>}
-    {error && <p role="alert" className="neg">{error}{snapshot?.quotes?.length>0?' Previous values may be outdated.':''}</p>}
-    {!snapshot&&!error&&<p>Fetching market data…</p>}
-    {snapshot?.missing_symbols?.length>0&&<p>Unavailable: {snapshot.missing_symbols.join(', ')}</p>}
-    {snapshot?.quotes.map(q=><div key={q.symbol}><h3>{q.symbol} · {fmt(q.price)} <span className="mut">{q.stale?'Stale / market closed':'Recent trade'} · {q.timestamp}</span></h3>
-      {Object.keys(history[q.symbol]||{}).length>1?<EquityChart equity={history[q.symbol]} label={q.symbol+" trade price"}/>:<p>Waiting for another trade to draw the chart.</p>}</div>)}
-    {snapshot?.fetched_at&&<small>Last successful fetch: {snapshot.fetched_at}</small>}
-    </div></div>;
+    if(!snapshot?.quotes)return;
+    setHistory(previous=>{
+      const next={...previous};
+      snapshot.quotes.forEach(q=>{const points={...(next[q.symbol]||{}),[q.timestamp]:q.price};next[q.symbol]=Object.fromEntries(Object.entries(points).sort(([a],[b])=>a.localeCompare(b)).slice(-120));});
+      return next;
+    });
+  },[snapshot]);
+  function applySymbols(e){
+    e.preventDefault();const list=[...new Set(draft.toUpperCase().split(',').map(s=>s.trim()).filter(Boolean))];
+    if(!list.length||list.length>6||list.some(s=>! /^[A-Z][A-Z0-9.\-]{0,14}$/.test(s))){setInputError('Enter 1–6 US stock symbols, separated by commas.');return;}
+    setInputError('');onSymbols(list.join(','));
+  }
+  const ready=snapshot?.quotes?.length>0;
+  const unconfigured=snapshot?.status==='not_configured';
+  const points=history[selected]||{};
+  return <div>
+    <div className="workspace-head"><div><span className="eyebrow">Market workspace</span><h1>Market overview</h1><p>Follow US stocks, turn an idea into a strategy, and test it against historical prices.</p></div><span className="feed-status">{isDemo?'Demo selected':error?'Feed unavailable':unconfigured?'Connection required':ready?'Alpaca · '+snapshot.feed:'Connecting…'}</span></div>
+    {isDemo&&<div className="context-note">You selected synthetic demo data. Switch to Alpaca US historical to connect the market feed.</div>}
+    {error&&<div role="alert" className="context-note">{error} {ready?'Displayed values may be outdated.':''}</div>}
+    <form className="watchlist-form" onSubmit={applySymbols}><input type="text" aria-label="Watchlist symbols" value={draft} onChange={e=>setDraft(e.target.value)} placeholder="AAPL, MSFT, SPY"/><button className="btn" type="submit">Update watchlist</button></form>
+    {inputError&&<p role="alert" className="neg">{inputError}</p>}
+    <div className="quote-grid">{symbols.split(',').map(symbol=>{const q=snapshot?.quotes?.find(q=>q.symbol===symbol);return <button className={'quote-card'+(selected===symbol?' active':'')} key={symbol} onClick={()=>setSelected(symbol)}><strong>{symbol} <span className="faint">/ USD</span></strong><div className="quote-price">{q?fmt(q.price):'—'}</div><small>{q?(q.stale?'Stale trade · ':'Trade · ')+new Date(q.timestamp).toLocaleTimeString():unconfigured?'Connect market data':ready?'No trade available':'Awaiting provider data'}</small></button>;})}</div>
+    <div className="overview-grid"><div className="panel"><h3>{selected} <span className="mut">Latest trade price</span></h3>
+      {Object.keys(points).length>1?<EquityChart equity={points} label={selected+' · USD'}/>:<div className="chart-empty"><strong>{unconfigured?'Connect your market feed':ready?'Waiting for the next trade':'Price history appears here'}</strong><p>{unconfigured?'Prices and charts will populate from Alpaca once your server credentials are configured.':ready?'The chart builds from actual trade updates while this page is open.':'Choose a symbol above. No generated prices or demo charts are shown in this workspace.'}</p></div>}
+      <p className="muted">{snapshot?.fetched_at?'Last fetched '+new Date(snapshot.fetched_at).toLocaleString()+' · ':''}Updates every 15 seconds when connected. IEX covers one exchange; old trades are marked stale.</p>
+    </div><div className="panel"><span className="eyebrow">Get started</span><h3 style={{marginTop:10}}>Your research workflow</h3>
+      <div className="setup-step"><span className="step-number">01</span><div><strong>Connect market data</strong><p>{ready?'Feed connected. Select a stock to inspect its price.':'Add ALPACA_API_KEY_ID and ALPACA_API_SECRET_KEY in Render Environment. Keep keys on the server.'}</p></div></div>
+      <div className="setup-step"><span className="step-number">02</span><div><strong>Describe your strategy</strong><p>Use the research panel to define a US price-based strategy. Claude is optional and needs its own API key.</p></div></div>
+      <div className="setup-step"><span className="step-number">03</span><div><strong>Backtest and validate</strong><p>Choose dates, run the engine, and inspect performance and risk checks on the selected data.</p></div></div>
+      <button className="btn primary" onClick={unconfigured?onRetry:onResearch}>{unconfigured?'Check connection again':'Open research'}</button>
+    </div></div>
+  </div>;
 }
 
 function BacktestView({bt,strategy,onRun,onPromote,busy}){
-  if(!strategy) return <div className="empty">Create a strategy in the research panel to begin.<br/>Try a suggested prompt.</div>;
+  if(!strategy) return <div className="panel"><span className="eyebrow">Strategy research</span><h2>Test your next idea</h2><p className="muted">Describe a strategy in the research panel, choose a data source and date range, then run a backtest. Returns, drawdowns and benchmark comparisons will appear here.</p><div className="chart-empty"><strong>No backtest yet</strong><p>Try: Six-month momentum on US large caps, top 5, monthly, vs SPY.</p></div></div>;
   if(!bt) return <div className="empty">Strategy <b className="mono">{strategy.spec.name}</b> ready.<br/><br/>
     <button className="btn primary" onClick={onRun} disabled={busy}>Run backtest</button></div>;
   return <div className="grid">
@@ -460,6 +517,7 @@ function ValidationView({v,onRun,busy}){
   return <div className="grid">
     <div className="panel"><h3>Verdict<span className="spacer" style={{flex:1}}></span>
       <button className="btn sm" onClick={onRun} disabled={busy}>Re-run</button></h3>
+      <p className="muted">Data source: {v.data?.source||'sample'} {v.data?.feed||'(synthetic)'}</p>
       <div className={'verdict '+v.verdict}>{v.verdict.replace('_',' ')}</div>
       <p className="dim" style={{marginTop:10,fontSize:12.5,lineHeight:1.5}}>{v.summary}</p></div>
     <div className="panel"><h3>Robustness checks</h3>
