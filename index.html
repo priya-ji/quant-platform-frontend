@@ -400,6 +400,7 @@ function MarketView(){
   const [snapshot,setSnapshot]=useState(null);
   const [error,setError]=useState('');
   const [history,setHistory]=useState({});
+  const [retry,setRetry]=useState(0);
   useEffect(()=>{
     let alive=true, timer;
     async function refresh(){
@@ -407,6 +408,7 @@ function MarketView(){
         const data=await api('/api/market/latest?symbols=AAPL,MSFT,SPY');
         if(alive){
           setSnapshot(data);setError('');
+          if(data.status==='not_configured'){setHistory({});return;}
           setHistory(previous=>{
             const next={...previous};
             data.quotes.forEach(q=>{const points={...(next[q.symbol]||{}),[q.timestamp]:q.price};next[q.symbol]=Object.fromEntries(Object.entries(points).sort(([a],[b])=>a.localeCompare(b)).slice(-120));});
@@ -417,15 +419,15 @@ function MarketView(){
       if(alive)timer=setTimeout(refresh,15000);
     }
     refresh();return ()=>{alive=false;clearTimeout(timer);};
-  },[]);
+  },[retry]);
   return <div className="grid"><div className="panel"><h3>US market data · latest trades</h3>
-    <p>Alpaca {snapshot?.feed||'configured feed'} · refreshed every 15 seconds. IEX covers one exchange. Chart collects prices while this tab is open.</p>
-    {error && <p role="alert" className="neg">{error} Previous values may be outdated.</p>}
+    {snapshot?.status==='not_configured' ? <div role="status"><h3>Live market data not configured</h3><p>{snapshot.message}</p><p>Automatic requests are paused. Synthetic backtests remain available.</p><button className="btn" onClick={()=>{setSnapshot(null);setRetry(n=>n+1);}}>Check connection again</button></div> : <p>Alpaca {snapshot?.feed||'configured feed'} · refreshed every 15 seconds. IEX covers one exchange. Chart collects prices while this tab is open.</p>}
+    {error && <p role="alert" className="neg">{error}{snapshot?.quotes?.length>0?' Previous values may be outdated.':''}</p>}
     {!snapshot&&!error&&<p>Fetching market data…</p>}
     {snapshot?.missing_symbols?.length>0&&<p>Unavailable: {snapshot.missing_symbols.join(', ')}</p>}
     {snapshot?.quotes.map(q=><div key={q.symbol}><h3>{q.symbol} · {fmt(q.price)} <span className="mut">{q.stale?'Stale / market closed':'Recent trade'} · {q.timestamp}</span></h3>
       {Object.keys(history[q.symbol]||{}).length>1?<EquityChart equity={history[q.symbol]} label={q.symbol+" trade price"}/>:<p>Waiting for another trade to draw the chart.</p>}</div>)}
-    {snapshot&&<small>Last successful fetch: {snapshot.fetched_at}</small>}
+    {snapshot?.fetched_at&&<small>Last successful fetch: {snapshot.fetched_at}</small>}
     </div></div>;
 }
 
